@@ -1,9 +1,9 @@
 package com.tws.refactoring.extract_variable;
 
 public class BannerRender {
-    void renderBanner(String platform, String browser) {
+    public void renderBanner(String platform, String browser) {
         if (foundKeyword(platform, "MAC") && (foundKeyword(browser, "IE"))) {
-            // do something
+            System.out.print("123");
         }
     }
 
