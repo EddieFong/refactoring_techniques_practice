@@ -8,6 +8,6 @@ import static org.junit.Assert.assertEquals;
 public class PriceCalculatorTest {
     @Test
     public void calculate() {
-        assertEquals(new PriceCalculator().getPrice(20,30),260.0);
+        assertEquals(new PriceCalculator().getPrice(20,30),660.0,0.1);
     }
 }
