@@ -28,14 +28,16 @@ public class OwingPrinterTest {
 
     @Test
     public void printOwing() {
-        List<Order> orders = new ArrayList<Order>(Arrays.asList(new Order(123), new Order(456), new Order(789)));
-        OwingPrinter owingPrinter = new OwingPrinter();
-        owingPrinter.printOwing("Name",orders);
-        String expected = "*****************************";
-        expected+= "****** Customer totals ******";
-        expected+= "*****************************";
-        expected+="name: Name";
-        expected+="amount: 1368";
+
+        String expected = "*****************************\r\n";
+        expected+= "****** Customer totals ******\r\n";
+        expected+= "*****************************\r\n";
+        expected+="name: Name\r\n";
+        expected+="amount: 1368.0\r\n";
+
+        List<Order> orders = new ArrayList<Order>(Arrays.asList(new Order(123.0), new Order(456.0), new Order(789.0)));
+        new OwingPrinter().printOwing("Name",orders);
+
         assertEquals(expected, outContent.toString());
     }
 

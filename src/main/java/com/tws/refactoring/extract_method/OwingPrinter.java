@@ -19,10 +19,12 @@ public class OwingPrinter {
     private double getOutstanding(List<Order> orders) {
 
         double outstanding = 0.0;
-        while (orders.iterator().hasNext()) {
-            Order each = (Order) orders.iterator().next();
+        Iterator<Order> elements = orders.iterator();
+        while (elements.hasNext()) {
+            Order each = (Order) elements.next();
             outstanding += each.getAmount();
         }
+
         return outstanding;
     }
 
